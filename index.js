@@ -18,8 +18,10 @@ class Slider extends HTMLElement {
             setInterval(() => {
                 const root = document.querySelectorAll('.slide');
                 const current = parseInt(root[0].getAttribute('custom-data'));
-                if (images[current] !== undefined) {
+                if (images[current + 1] !== undefined) {
                     root[0].setAttribute('custom-data', current + 1);
+                } else {
+                    root[0].setAttribute('custom-data', 0);
                 }
             }, 3000)
         })
@@ -70,7 +72,7 @@ class NextArrow extends HTMLElement {
         this.addEventListener('click', () => {
             const root = document.querySelectorAll('.slide');
             const current = parseInt(root[0].getAttribute('custom-data'));
-            if (images[current] !== undefined) {
+            if (images[current + 1] !== undefined) {
                 root[0].setAttribute('custom-data', current + 1);
             } else {
                 root[0].setAttribute('custom-data', 0);
@@ -89,10 +91,10 @@ class PrevArrow extends HTMLElement {
         this.addEventListener('click', () => {
             const root = document.querySelectorAll('.slide');
             const current = parseInt(root[0].getAttribute('custom-data'));
-            if (images[current] !== undefined) {
+            if (images[current - 1] !== undefined) {
                 root[0].setAttribute('custom-data', current - 1);
             } else {
-                root[0].setAttribute('custom-data', 0);
+                root[0].setAttribute('custom-data', images.length - 1);
             }
         })
     }
