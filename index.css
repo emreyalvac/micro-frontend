@@ -1,0 +1,37 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.slider {
+    display: flex;
+    justify-content: center;
+    margin: 150px auto;
+    position: relative;
+}
+
+.slide {
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+}
+
+.next-arrow, .prev-arrow {
+    cursor: pointer;
+    font-size: 50px;
+    margin: 15px;
+}
+
+.next-arrow {
+    position: absolute;
+    right: 0;
+    top: 30%;
+}
+
+.prev-arrow {
+    position: absolute;
+    left: 0;
+    top: 30%;
+}
+
